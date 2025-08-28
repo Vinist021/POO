@@ -7,13 +7,14 @@ public class Aplic {
         objRet = new Retangulo();
         
         //Passagem de mensagens
-        objRet.setAltura(5.0);
-        objRet.setBase(8.0);
+        objRet.setAltura(3.0);
+        objRet.setBase(4.0);
                 
         System.out.println("Medida da altura do retângulo: " + objRet.getAltura());
         System.out.println("Medida da base do retângulo: " + objRet.getBase());
         System.out.println("Medida da área: " + objRet.calcArea());
         System.out.println("Medida do perímetro: " + objRet.calcPerimetro());
+        System.out.println("Medida da diagonal: " + objRet.calcDiagonal());
     }
     
 }

@@ -26,4 +26,7 @@ public class Retangulo {
         return (2 * (base + altura));
     }
     
+    public double calcDiagonal() {
+        return Math.sqrt((Math.pow(base, 2)) + (Math.pow(altura, 2)));
+    }
 }
