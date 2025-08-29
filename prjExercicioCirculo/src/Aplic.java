@@ -1,20 +1,37 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+import java.util.Scanner;
 
-/**
- *
- * @author 0030482523032
- */
 public class Aplic {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        double medRaio;
+        int opcao;
+
+        //Instanciação da classe scanner
+        Scanner entrada = new Scanner(System.in);
+
+        System.out.println("Digite a medida do raio do círculo: ");
+        medRaio = entrada.nextDouble();
+
+        //Instanciação de um objeto da classe circulo
+        Circulo circulo = new Circulo();
+        circulo.setRaio(medRaio);
+
+        do {
+            System.out.println("\n\n1 - Consultar medida do raio");
+            System.out.println("2 - Consultar medida do perímetro");
+            System.out.println("3 - Consultar medida da área");
+            System.out.println("4 - Encerrar");
+            System.out.println("\n\tDigite a opção: ");
+            opcao = entrada.nextInt();
+
+            switch (opcao) {
+                case 1 -> System.out.printf("Medida do raio: " + circulo.getRaio());
+                case 2 -> System.out.printf("Medida do perímetro: " + circulo.calcPerimetro());
+                case 3 -> System.out.printf("Medida da area: " + circulo.calcArea());
+                default -> System.exit(0);
+            }
+
+        } while(opcao < 4);
     }
     
 }
