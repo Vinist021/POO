@@ -25,13 +25,23 @@ public class Aplic {
             opcao = entrada.nextInt();
 
             switch (opcao) {
-                case 1 -> System.out.printf("Medida do raio: " + circulo.getRaio());
-                case 2 -> System.out.printf("Medida do perímetro: " + circulo.calcPerimetro());
-                case 3 -> System.out.printf("Medida da area: " + circulo.calcArea());
-                default -> System.exit(0);
+                case 1:
+                    System.out.printf("Medida do raio: " + circulo.getRaio());
+                    break;
+                case 2:
+                        System.out.printf("Medida do perímetro: " + circulo.calcPerimetro());
+                        break;
+                case 3:
+                    System.out.printf("Medida da area: " + circulo.calcArea());
+                    break;
+                case 4:
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Insira um opção válida");
             }
 
-        } while(opcao < 4);
+        } while(opcao != 4);
     }
     
 }
