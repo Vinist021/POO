@@ -2,11 +2,13 @@ public class Livro {
     
     private int identificacao;
     private String titulo;
-    private boolean situacao;
+    private boolean situacao; // disponivel = true | emprestado = false
     private double valMultaDiaria;
     
     public Livro(int identificacao, String titulo){
-        
+        this.identificacao = identificacao;
+        this.titulo = titulo;
+        this.situacao = true;
     }
     
     public void setValMultaDiaria(double valMultaDiaria) {
@@ -26,11 +28,11 @@ public class Livro {
     }
     
     public void emprestar() {
-        situacao = true;
+        situacao = false;
     }
     
     public double devolver(int qtdDiasAtraso) {
-        situacao = false;
+        situacao = true;
         return valMultaDiaria * qtdDiasAtraso;
     }
 }

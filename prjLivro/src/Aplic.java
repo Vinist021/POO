@@ -31,15 +31,37 @@ public class Aplic {
             
             switch(opcao){
                 case 1:
-                    System.out.println(livro.getTitulo());
+                    String msgSituacao = livro.getSituacao() ? "Disponível" : "Emprestado";
+                    System.out.printf("Identificação: %s | Título: %s | Situação: %s",
+                                       livro.getIdentificacao(), livro.getTitulo(), msgSituacao);
                     break;
                 case 2:
-                    livro.emprestar();
+                    if(livro.getSituacao()){
+                        livro.emprestar();
+                    } else {
+                        System.out.println("O livro está emprestado");
+                        }
                     break;
                 case 3:
-                    System.out.println("Quantos dias de atraso possui o livro: ");
-                    qtdDiasAtraso = sc.nextInt();
-                    livro.devolver(qtdDiasAtraso);
+                    if(!livro.getSituacao()){
+                        System.out.println("Quantos dias de atraso possui o livro: ");
+                        qtdDiasAtraso = sc.nextInt();
+                        if(qtdDiasAtraso > 0){
+                            System.out.println("Qual o valor da multa diária?");
+                            livro.setValMultaDiaria(sc.nextDouble());
+                        }
+                        double multaTotal = livro.devolver(qtdDiasAtraso);
+                    
+                        System.out.println("Operação de devolução realizada com sucesso");
+                    
+                        if (multaTotal > 0){
+                            System.out.printf("Valor de multa a ser pago: %.2f", multaTotal);
+                        }
+                    }
+                    else {
+                        System.out.println("O livro não se encotra emprestado!");
+                    }
+
                     break;
             }
         } while(opcao != 4);   
