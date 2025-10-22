@@ -7,6 +7,7 @@ package fatec.poo.model;
 public class Palestrante extends Pessoa {
     private String empresa;
     private double taxaCobranca;
+    private Palestra[] palestras;
     
     public Palestrante(String cpf, String nome, String empresa) {
         super(cpf, nome);

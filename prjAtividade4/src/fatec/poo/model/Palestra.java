@@ -8,6 +8,8 @@ public class Palestra {
     private String data;
     private String tema;
     private double valor;
+    private Palestrante palestrante;
+    private Participante[] participantes;
     
     public Palestra(String tema, double valor) {
         this.tema = tema;
