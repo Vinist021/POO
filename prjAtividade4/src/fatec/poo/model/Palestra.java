@@ -1,5 +1,7 @@
 package fatec.poo.model;
 
+import java.util.List;
+
 /**
  *
  * @author 0030482523032
@@ -9,7 +11,7 @@ public class Palestra {
     private String tema;
     private double valor;
     private Palestrante palestrante;
-    private Participante[] participantes;
+    private List<Participante> participantes;
     
     public Palestra(String tema, double valor) {
         this.tema = tema;
@@ -32,6 +34,19 @@ public class Palestra {
     }
     
     public double calcTotalFaturado() {
-        
+        double total = 0;
+        for(Participante p: participantes) {
+            if(p.getTipo() == 'C') {
+                total += this.valor;
+            }
+            else if(p.getTipo() == 'E') {
+                total += this.valor * 0.85;
+            }
+            else {
+                total += this.valor * 0.8;
+            }
+
+        }
+        return total;
     }
 }

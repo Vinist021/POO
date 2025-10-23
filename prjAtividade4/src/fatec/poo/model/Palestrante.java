@@ -1,5 +1,8 @@
 package fatec.poo.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author 0030482523032
@@ -7,7 +10,7 @@ package fatec.poo.model;
 public class Palestrante extends Pessoa {
     private String empresa;
     private double taxaCobranca;
-    private Palestra[] palestras;
+    private List<Palestra> palestras = new ArrayList<>();
     
     public Palestrante(String cpf, String nome, String empresa) {
         super(cpf, nome);
@@ -26,9 +29,7 @@ public class Palestrante extends Pessoa {
         this.taxaCobranca = taxaCobranca;
     }
     
-    // Realizar associação com palestra
     public double calcTotalReceberPalestras() {
-        return 0;
+        return palestras.stream().mapToDouble(p -> p.getValor()).sum() * taxaCobranca;
     }
-    
 }
