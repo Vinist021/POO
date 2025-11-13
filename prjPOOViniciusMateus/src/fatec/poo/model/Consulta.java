@@ -38,7 +38,14 @@ public class Consulta {
     }
     
     public double calcValorTotalPagar() { 
-        //acertar após fazer os relacionamentos
-        return 0.0;
+        double total = this.valor;
+        if (exames != null) {
+            for (Exame e : exames) {
+                if (e != null) {
+                    total += e.getValor();
+                }
+            }
+        }
+        return total;
     }
 }
