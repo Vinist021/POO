@@ -1,8 +1,8 @@
-
 package fatec.poo.model;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.ArrayList;
 
 /**
  *
@@ -12,10 +12,12 @@ public class Paciente extends Pessoa {
     private LocalDate dataNascimento;
     private double altura;
     private double peso;
+    private ArrayList<Consulta> consultas;  // 0..*
           
     public Paciente(String cpf, String nome, LocalDate dataNascimento) {
         super(cpf, nome);
         this.dataNascimento = dataNascimento;
+        consultas = new ArrayList<Consulta>();
     }
 
     public void setAltura(double altura) {
