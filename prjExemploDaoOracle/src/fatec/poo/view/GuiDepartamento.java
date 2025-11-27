@@ -158,7 +158,7 @@ public class GuiDepartamento extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        conexao = new Conexao("BD2523032","BD2523032");//usuario e senha
+        conexao = new Conexao("Dimas","Objetopo");//usuario e senha
         conexao.setDriver("oracle.jdbc.driver.OracleDriver");
         conexao.setConnectionString("jdbc:oracle:thin:@192.168.1.6:1521:xe");
         daoDepartamento = new DaoDepartamento(conexao.conectar());
@@ -170,7 +170,8 @@ public class GuiDepartamento extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowClosing
 
     private void btnInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserirActionPerformed
-        departamento = new Departamento(txtSigla.getText(),txtNome.getText());
+        departamento = new Departamento(txtSigla.getText(),
+                                        txtNome.getText());
         daoDepartamento.inserir(departamento);
          
         txtSigla.setText("");

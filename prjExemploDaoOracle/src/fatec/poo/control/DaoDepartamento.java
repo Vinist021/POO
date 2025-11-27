@@ -22,7 +22,7 @@ public class DaoDepartamento {
             ps.setString(1, departamento.getSigla());
             ps.setString(2, departamento.getNome());
                       
-            ps.execute();
+            ps.execute();  
         } catch (SQLException ex) {
              System.out.println(ex.toString());   
         }
@@ -42,7 +42,7 @@ public class DaoDepartamento {
              System.out.println(ex.toString());   
         }
     }
-                                        
+                                                     
      public  Departamento consultar (String sigla) {
         Departamento d = null;          
        
