@@ -1,0 +1,1 @@
+jdbc:oracle:thin:BD2523032/senha@//apolo:1521/xe

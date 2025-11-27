@@ -31,7 +31,7 @@ public class Conexao {
 	      try {
                  Class.forName(driver);
             
-                 connection = DriverManager.getConnection(connectionString, usuario, senha);               
+                 connection = DriverManager.getConnection("viniBD", "BD2523032", "BD2523032");               
 	         System.out.println("Conexao OK");
               }catch (Exception ex) {
                   System.out.println("Falha na Conexao");
